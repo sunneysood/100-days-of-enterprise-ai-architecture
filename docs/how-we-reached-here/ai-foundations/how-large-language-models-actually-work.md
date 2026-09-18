@@ -5,7 +5,7 @@
 
 *A complete, plain-English mental model — from tokens to attention to the exact moment ChatGPT picks its next word.*
 
-![](https://cdn.hashnode.com/uploads/covers/653aa283805ce8301a2a5d7d/b467051f-0911-4035-8b8a-21e9a8546789.png align="center")
+![](https://cdn.hashnode.com/uploads/covers/653aa283805ce8301a2a5d7d/b467051f-0911-4035-8b8a-21e9a8546789.png)
 
 When you type a question into ChatGPT and an answer appears a few seconds later, it's easy to imagine a tiny digital brain reading your words, thinking about them, and then writing back. That mental picture feels natural — but it isn't quite what's happening.
 
@@ -13,7 +13,7 @@ Underneath the friendly chat window, a large language model (LLM) is doing somet
 
 > **An LLM generates text by repeatedly predicting one word — or piece of a word — at a time.**
 
-![](https://cdn.hashnode.com/uploads/covers/653aa283805ce8301a2a5d7d/75696747-eda0-42db-a034-eb8beb0cf296.png align="center")
+![](https://cdn.hashnode.com/uploads/covers/653aa283805ce8301a2a5d7d/75696747-eda0-42db-a034-eb8beb0cf296.png)
 
 That's it. That's the whole party trick.
 
@@ -86,7 +86,7 @@ A **tokenizer** breaks text into smaller chunks called **tokens**. A token might
 
 For our sentence, a tokenizer might conceptually split it like this:
 
-![](https://cdn.hashnode.com/uploads/covers/653aa283805ce8301a2a5d7d/63e98463-3139-4d0f-bbe4-6444b55fb531.png align="center")
+![](https://cdn.hashnode.com/uploads/covers/653aa283805ce8301a2a5d7d/63e98463-3139-4d0f-bbe4-6444b55fb531.png)
 
 Notice that spaces often get glued onto the *front* of the next word rather than floating on their own — that's a real quirk of how many modern tokenizers work. The key takeaway is simple but easy to forget:
 
@@ -94,7 +94,7 @@ Notice that spaces often get glued onto the *front* of the next word rather than
 
 Common words are often a single token. Rare, technical, or made-up words frequently get chopped into multiple smaller pieces. For example, a word like "tokenization" might become `"token"` + `"ization"` rather than staying whole, simply because the model's vocabulary doesn't have a dedicated slot for every possible word in every language — it's far more efficient to build long words out of smaller, reusable pieces, the same way you can build many different LEGO creations from the same box of bricks.
 
-![](https://cdn.hashnode.com/uploads/covers/653aa283805ce8301a2a5d7d/89b3a1ee-2f4d-4393-b5f6-e55ee3c6b878.png align="center")
+![](https://cdn.hashnode.com/uploads/covers/653aa283805ce8301a2a5d7d/89b3a1ee-2f4d-4393-b5f6-e55ee3c6b878.png)
 
 ## 4. Why Different Models Split Text Differently
 
@@ -109,7 +109,7 @@ Tokenization isn't a universal law of language; it's a *design choice* baked int
 
 Think of it like two shipping companies packing the exact same order. One company might box it up as three medium packages; another might use two larger ones. The *contents* are identical, but the *packaging* is different. In the same way, the same English sentence can turn into a different number of tokens, split at different points, depending on which model's tokenizer is doing the cutting.
 
-![](https://cdn.hashnode.com/uploads/covers/653aa283805ce8301a2a5d7d/6c421ecf-bb6b-498a-b184-b4fa5644f1d8.png align="center")
+![](https://cdn.hashnode.com/uploads/covers/653aa283805ce8301a2a5d7d/6c421ecf-bb6b-498a-b184-b4fa5644f1d8.png)
 
 This has a practical consequence worth knowing: after tokenization, each token gets converted into a plain integer called a **token ID** — essentially, its address in that model's vocabulary list. A token ID like `481` means absolutely nothing on its own; it only makes sense *inside the specific vocabulary it belongs to*. Model A's token `481` and Model B's token `481` are very likely completely different pieces of text. It's a bit like how the same locker number means nothing until you know which building you're standing in.
 
@@ -123,19 +123,19 @@ That's the job of an **embedding**.
 
 Every token ID gets converted into a long list of decimal numbers — a **vector** — that has been learned during training. Something like:
 
-![](https://cdn.hashnode.com/uploads/covers/653aa283805ce8301a2a5d7d/4f553169-8288-47fc-bd74-d0b3e65c934d.png align="center")
+![](https://cdn.hashnode.com/uploads/covers/653aa283805ce8301a2a5d7d/4f553169-8288-47fc-bd74-d0b3e65c934d.png)
 
 The best way to build intuition here is to imagine a giant map, except instead of two dimensions (north-south, east-west), this map has hundreds of dimensions. Every word in the model's vocabulary gets a "location" somewhere on that map, and — because of how the model was trained — **words that behave similarly in language end up located near each other.**
 
 Picture a simplified, three-dimensional slice of that map:
 
-![](https://cdn.hashnode.com/uploads/covers/653aa283805ce8301a2a5d7d/43642a8c-4588-45ae-8d2f-ebaab84bdf53.png align="center")
+![](https://cdn.hashnode.com/uploads/covers/653aa283805ce8301a2a5d7d/43642a8c-4588-45ae-8d2f-ebaab84bdf53.png)
 
 "Cat" and "dog" land close together because they show up in similar kinds of sentences — both get walked, fed, and petted. "tired" lands somewhere completely different, closer to "sat," because exercise related words tend to appear in exercise related contexts. Nobody manually programmed these rules; the model discovered them purely by noticing statistical patterns across enormous amounts of text.
 
 This is why embeddings are so useful beyond just LLMs — they power search engines, recommendation systems, and "find similar items" features, all by measuring distance between points on this meaning-map.
 
-![](https://cdn.hashnode.com/uploads/covers/653aa283805ce8301a2a5d7d/2a3093e4-732d-491f-9e30-7cbc026b335d.png align="center")
+![](https://cdn.hashnode.com/uploads/covers/653aa283805ce8301a2a5d7d/2a3093e4-732d-491f-9e30-7cbc026b335d.png)
 
 > **🔍** Real embedding vectors for a modern LLM typically have somewhere between 768 and over 12,000 dimensions — nobody can visualize that directly, which is exactly why the 2D/3D "map" picture above is a simplification. No single dimension in that vector means one clean thing like "furriness" or "size" — meaning is spread out, or *distributed*, across the whole vector, and only becomes interpretable through combinations of many dimensions at once.
 
@@ -200,7 +200,7 @@ When it's "it"'s turn to be interpreted, its spotlight doesn't shine on every wo
 
 The model isn't literally shining lights, of course — but the intuition holds: **attention lets every token look across the whole sentence and pull in exactly the information it needs to understand itself correctly, right now, in this specific context.** This is exactly how the plain embedding for "it" gets transformed into a context-aware representation that effectively means *"the dog, specifically."*
 
-![](https://cdn.hashnode.com/uploads/covers/653aa283805ce8301a2a5d7d/79da7d7d-76f8-4aed-9561-b7349713afa6.png align="center")
+![](https://cdn.hashnode.com/uploads/covers/653aa283805ce8301a2a5d7d/79da7d7d-76f8-4aed-9561-b7349713afa6.png)
 
 ## 9. Query, Key, and Value: The Engine Behind Attention
 
@@ -222,7 +222,7 @@ VALUE   → "What information do I actually contribute once I'm picked?"
 
 Every single token in the sentence generates all three of these vectors for itself. When the token "it" wants to figure out what it means, it builds a Query. Every other token in the sentence offers up its Key so "it" can check how relevant each one is. The tokens with the best-matching Keys — in our example, "dog" — contribute their Values most strongly to the final, updated representation of "it."
 
-![](https://cdn.hashnode.com/uploads/covers/653aa283805ce8301a2a5d7d/0e5b873e-9047-49c2-a9e1-b49c333f6e74.png align="center")
+![](https://cdn.hashnode.com/uploads/covers/653aa283805ce8301a2a5d7d/0e5b873e-9047-49c2-a9e1-b49c333f6e74.png)
 
 ## 10. Why Do We Need Three Separate Vectors?
 
@@ -254,7 +254,7 @@ Attention(Q, K, V) = softmax( Q·Kᵀ / √d_k ) · V
 
 You don't need to memorize this to understand attention conceptually — but it's worth recognizing, because you'll see it in essentially every paper and diagram about Transformers.
 
-![](https://cdn.hashnode.com/uploads/covers/653aa283805ce8301a2a5d7d/ac211239-3220-4dda-be77-872c003e7415.png align="center")
+![](https://cdn.hashnode.com/uploads/covers/653aa283805ce8301a2a5d7d/ac211239-3220-4dda-be77-872c003e7415.png)
 
 ## 11. What Is a Transformer, Exactly?
 
@@ -262,7 +262,7 @@ Attention is powerful, but it's only one ingredient. The full architecture that 
 
 A single, simplified Transformer block looks roughly like this:
 
-![](https://cdn.hashnode.com/uploads/covers/653aa283805ce8301a2a5d7d/cc68d886-6d0b-446a-b127-598c8ee96a70.png align="center")
+![](https://cdn.hashnode.com/uploads/covers/653aa283805ce8301a2a5d7d/cc68d886-6d0b-446a-b127-598c8ee96a70.png)
 
 Two extra pieces are worth briefly demystifying, since they show up in every serious diagram of this architecture:
 
@@ -271,7 +271,7 @@ Two extra pieces are worth briefly demystifying, since they show up in every ser
 
 The **Feed-Forward Network** is a smaller neural network applied to each token individually (not across tokens like attention). If attention is where tokens *gather information from each other*, the feed-forward layer is where each token *processes* that gathered information on its own.
 
-![](https://cdn.hashnode.com/uploads/covers/653aa283805ce8301a2a5d7d/547d4b5a-ea23-428c-b8a7-6681eb8c2609.png align="center")
+![](https://cdn.hashnode.com/uploads/covers/653aa283805ce8301a2a5d7d/547d4b5a-ea23-428c-b8a7-6681eb8c2609.png)
 
 ## 12. What Happens Inside Multiple Transformer Layers?
 
@@ -289,7 +289,7 @@ By the time our token "it" has passed through all of these stacked layers, it is
 
 That final, richly contextual vector — for the very last token in the sequence — is what the model uses to make its actual prediction. Which brings us to the moment of truth.
 
-![](https://cdn.hashnode.com/uploads/covers/653aa283805ce8301a2a5d7d/0cc0abae-550b-4d98-b54c-a0b843d569cc.png align="center")
+![](https://cdn.hashnode.com/uploads/covers/653aa283805ce8301a2a5d7d/0cc0abae-550b-4d98-b54c-a0b843d569cc.png)
 
 ## 13. From Vectors to Words: Logits and Softmax
 
@@ -323,7 +323,7 @@ That `- np.max(logits)` trick doesn't change the final answer mathematically —
 
 Once we have this clean probability distribution, the model is finally ready to do something with it: pick a word.
 
-![](https://cdn.hashnode.com/uploads/covers/653aa283805ce8301a2a5d7d/ee57ad2c-6f08-4d94-97bd-8663e942f29f.png align="center")
+![](https://cdn.hashnode.com/uploads/covers/653aa283805ce8301a2a5d7d/ee57ad2c-6f08-4d94-97bd-8663e942f29f.png)
 
 ## 14. Autoregressive Generation: Writing One Word at a Time
 
@@ -331,7 +331,7 @@ Here's where the whole system reveals its simplest, and arguably strangest, secr
 
 Let's trace it through our example, starting from just "The cat":
 
-![](https://cdn.hashnode.com/uploads/covers/653aa283805ce8301a2a5d7d/40b4c9e8-f70b-4a77-9f31-51eb358f2a08.png align="center")
+![](https://cdn.hashnode.com/uploads/covers/653aa283805ce8301a2a5d7d/40b4c9e8-f70b-4a77-9f31-51eb358f2a08.png)
 
 At every single step, the entire process we just walked through — tokenize, embed, add position info, run through every Transformer layer, compute logits, apply Softmax — happens again from scratch, using the *updated* sequence as input. The model has no separate "memory" of having done this before; it simply re-reads the whole conversation (now one token longer) and predicts what comes next, over and over, until it decides to stop.
 
@@ -343,7 +343,7 @@ This autoregressive loop also explains something you've probably noticed but may
 
 The honest answer is: because that's *literally how it's being produced*. The model isn't hiding a finished paragraph and slowly revealing it for dramatic effect — each word genuinely doesn't exist yet until its specific generation step completes. As soon as one token is predicted, the interface can display it to you immediately and simultaneously start computing the next one. This is called **streaming**, and it exists for a very practical reason: waiting for a 400-word answer to fully finish generating before showing you *anything* would feel painfully slow. Streaming lets you start reading within a second or two, while the rest of the response is still being computed behind the scenes, token by token, exactly as we described above.
 
-![](https://cdn.hashnode.com/uploads/covers/653aa283805ce8301a2a5d7d/94e4a430-860b-466b-832a-bb355c0e439f.png align="center")
+![](https://cdn.hashnode.com/uploads/covers/653aa283805ce8301a2a5d7d/94e4a430-860b-466b-832a-bb355c0e439f.png)
 
 ## 16. Choosing the Next Word: Greedy Decoding vs. Sampling
 
@@ -355,7 +355,7 @@ We now have a probability distribution over every possible next token — but th
 
 Neither approach is objectively "better" — they're suited to different needs. Tasks like code generation or factual lookups often lean toward more deterministic decoding, while creative writing tends to benefit from a bit of sampling-driven variety.
 
-![](https://cdn.hashnode.com/uploads/covers/653aa283805ce8301a2a5d7d/6263176f-2121-4486-a707-07a093424119.png align="center")
+![](https://cdn.hashnode.com/uploads/covers/653aa283805ce8301a2a5d7d/6263176f-2121-4486-a707-07a093424119.png)
 
 ## 17. Temperature: The Creativity Dial
 
@@ -368,7 +368,7 @@ Temperature adjusts how "sharp" or "flat" the probability distribution becomes *
 
 A subtlety worth being precise about, because it's commonly misunderstood: **temperature doesn't change what the model "knows."** The underlying probabilities the model computed from its training remain exactly the same — temperature only reshapes how those probabilities get used during the final sampling step. It's a dial on *randomness and expressive range*, not a dial on intelligence, accuracy, or knowledge.
 
-![](https://cdn.hashnode.com/uploads/covers/653aa283805ce8301a2a5d7d/6d520edc-e91d-4d40-8bc1-5d971ef0a3f3.png align="center")
+![](https://cdn.hashnode.com/uploads/covers/653aa283805ce8301a2a5d7d/6d520edc-e91d-4d40-8bc1-5d971ef0a3f3.png)
 
 ## 18. Model vs. Decoding Strategy: Two Different Jobs
 
@@ -379,17 +379,17 @@ It's worth explicitly separating two ideas that people often blur together: the 
 
 A helpful analogy: the model is like a weather forecaster who calculates "70% chance of rain, 30% chance of sun." That calculation doesn't change. But *what you decide to do* with that forecast — always assume the most likely outcome, or occasionally gamble on the less likely one — is a completely separate decision layered on top. Same idea here: one AI model can produce wildly different-feeling output depending purely on which decoding strategy and temperature setting sit on top of it.
 
-![](https://cdn.hashnode.com/uploads/covers/653aa283805ce8301a2a5d7d/9f95e50d-b5fe-4970-aa4b-53a0e930c93a.png align="center")
+![](https://cdn.hashnode.com/uploads/covers/653aa283805ce8301a2a5d7d/9f95e50d-b5fe-4970-aa4b-53a0e930c93a.png)
 
 ## 19. Putting It All Together: The Full Journey
 
 Let's zoom back out and walk the entire pipeline one final time, start to finish, using our sentence as the guide.
 
-![](https://cdn.hashnode.com/uploads/covers/653aa283805ce8301a2a5d7d/f39f4ffa-c0cf-49c2-acd6-c5986ab9a307.png align="center")
+![](https://cdn.hashnode.com/uploads/covers/653aa283805ce8301a2a5d7d/f39f4ffa-c0cf-49c2-acd6-c5986ab9a307.png)
 
 Here's a quick reference table tying every term back to its job:
 
-![](https://cdn.hashnode.com/uploads/covers/653aa283805ce8301a2a5d7d/e938769f-76fb-4fc8-b01f-68b9b34dff1f.png align="center")
+![](https://cdn.hashnode.com/uploads/covers/653aa283805ce8301a2a5d7d/e938769f-76fb-4fc8-b01f-68b9b34dff1f.png)
 
 ## Final Takeaway
 
