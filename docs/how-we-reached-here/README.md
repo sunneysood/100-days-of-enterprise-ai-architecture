@@ -30,6 +30,3 @@ The below articles are  grouped as **AI Foundations** because they explain the t
 | [Tokens & Tokenizers: How a Computer "Reads" a Sentence](./ai-foundations/tokens-and-tokenizers.md) | Goes deeper into tokenization, BPE, tokenizer families, token IDs, token order, contextual meaning and a runnable mini-BPE implementation. |
 
 
-- project requirements
-
-That prevents this repository from becoming a second blogging platform.
