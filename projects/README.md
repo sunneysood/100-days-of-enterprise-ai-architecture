@@ -40,10 +40,10 @@ Integrate the capabilities above and harden the platform for security, reliabili
 
 Measure a baseline first, then set the target. Replace the wording below with numbers in each project's requirements file (copy `_TEMPLATE.md` to `pN-requirements.md`).
 
-| Project Headline success metric  |                                                                                                           |
-| -------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| Project | Headline success metric |
+|---|---|
 | P1                               | p95 latency and error rate under a load test; CI runs tests on every commit; auth enforced on every route |
-| P2                               | recall\@k and citation accuracy on a labelled set; **zero** cross-tenant leakage in tests                 |
+| P2                               | recall@k and citation accuracy on a labelled set; **zero** cross-tenant leakage in tests                 |
 | P3                               | A workflow killed mid-run resumes from its checkpoint with no duplicated side effects                     |
 | P4                               | Field-level accuracy; share auto-approved vs sent to review; false-accept rate on validated fields        |
 | P5                               | Every input record is accounted for as accepted, rejected or exception; zero silent drops                 |
