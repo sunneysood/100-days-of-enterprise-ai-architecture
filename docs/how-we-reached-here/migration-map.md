@@ -16,7 +16,15 @@ The first two articles have been copied from user-provided Markdown exports into
    - Area: LLM fundamentals / Transformer mechanics
    - Destination: `docs/how-we-reached-here/ai-foundations/how-large-language-models-actually-work.md`
 
+3. **Tokens & Tokenizers: How a Computer "Reads" a Sentence**
+   - Area: tokenization / NLP foundations / BPE implementation
+   - Destination: `docs/how-we-reached-here/ai-foundations/tokens-and-tokenizers.md`
+
 These two establish the technical foundation for the later architecture journey.
+
+## Migrated now
+
+The third AI foundation article has now been copied from the user-provided Markdown export and normalized for GitHub rendering. Hashnode-hosted images have been converted to standard Markdown image syntax.
 
 ## Move to GitHub — high relevance
 
