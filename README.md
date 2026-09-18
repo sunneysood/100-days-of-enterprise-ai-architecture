@@ -2,7 +2,7 @@
 
 > A hands-on journey from system design to production-grade Enterprise AI architecture.
 
-This repository is an engineering apprenticeship, not a course-completion challenge.
+This repository is an engineering apprenticeship.
 
 The objective is to develop the ability to **understand, design, build, break, measure, secure, and explain** production AI systems.
 
