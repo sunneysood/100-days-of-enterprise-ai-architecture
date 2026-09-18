@@ -2,7 +2,7 @@
 
 ## Status
 
-Phase 0 — PgMP
+Phase 0 — OutLine Preparation
 
 **Exam target:** 26 October 2026
 
