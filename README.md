@@ -8,7 +8,7 @@ The objective is to develop the ability to **understand, design, build, break, m
 
 ## North Star
 
-By the end of the journey, the repository should demonstrate a coherent capability stack:
+By the end of the journey, developer should demonstrate a coherent capability stack:
 
 **System Design → Distributed Systems → API Design → Data → AI Systems → RAG → Agents → Evaluation → LLM Infrastructure → Cloud/DevOps → Security/Governance → Enterprise Architecture**
 
@@ -22,11 +22,11 @@ Every meaningful topic follows:
 
 The repository values:
 
-- architectural reasoning over memorization
-- trade-offs over diagrams
-- working implementations over tutorial completion
-- production failure modes over happy-path demos
-- evidence over certificates
+- architectural reasoning
+- trade-offs
+- working implementations
+- production failure modes
+- implementation evidence via project development
 
 ## Repository Map
 
@@ -63,7 +63,7 @@ The sequence is intentionally progressive. Earlier capabilities become building 
 
 ## Core Engineering Questions
 
-For every system, ask:
+For every system, we ask:
 
 1. What problem are we solving?
 2. What are the functional requirements?
@@ -96,15 +96,13 @@ The journey ultimately converges into a production-oriented Enterprise AI platfo
 - FinOps and cost controls
 - resilience, scaling and disaster recovery
 
-The flagship is the **proof of integration**, not another unrelated project.
+The flagship is the **proof of integration** of building and demonstrating everything we have learnt along the journey.
 
 ## Current Status
 
-**Phase 0 — PgMP preparation**
+**Phase 0 — Roadmap preparation**
 
-The engineering journey begins after the PgMP milestone. The repository can be prepared beforehand; the 100-day execution starts afterward.
+The engineering journey begins after the RoadMap Finalisation milestone. The repository will have the structure prepared beforehand and updated during the implementation ; the 100-day execution starts once the outline is finalised.
 
 ## Guiding Principle
-
-> **Do not ask: “What course should I take next?”  
-> Ask: “What architectural problem can I solve now that I could not solve before?”**
+**“What architectural problem can I solve now that I could not solve before?”**
