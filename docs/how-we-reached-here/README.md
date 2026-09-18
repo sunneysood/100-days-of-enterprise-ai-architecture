@@ -27,6 +27,7 @@ The following two articles are now migrated from the user-provided Markdown expo
 |---|---|
 | [From If-Then Rules to ChatGPT: How AI Really Learned to "Think"](./ai-foundations/from-if-then-rules-to-chatgpt.md) | Establishes the historical progression from traditional programming and symbolic AI through machine learning, neural networks, RNNs, attention, Transformers and LLMs. |
 | [How Large Language Models Actually Work: From Your Prompt to Every Word They Write](./ai-foundations/how-large-language-models-actually-work.md) | Builds the mechanical mental model from tokens and embeddings through attention, Q/K/V, Transformer layers, logits, decoding and autoregressive generation. |
+| [Tokens & Tokenizers: How a Computer "Reads" a Sentence](./ai-foundations/tokens-and-tokenizers.md) | Goes deeper into tokenization, BPE, tokenizer families, token IDs, token order, contextual meaning and a runnable mini-BPE implementation. |
 
 These are not merely blog copies in the architecture journey. They form the **technical foundation layer** needed to understand why the later architecture choices exist.
 
