@@ -1,12 +1,12 @@
 # Roadmap
 
-## Phase 0 — PgMP
+## Phase 0 
 
 **Before 26 October 2026**
 
 No structured AI-architecture study track.
 
-The purpose of this phase is to protect focus for the PgMP exam.
+The purpose of this phase is to protect focus on roadmap preparation.
 
 ---
 
