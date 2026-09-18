@@ -307,8 +307,9 @@ sleeping       4.8               51%
 hungry         4.1               25%
 cute           3.7               17%
 outside        2.85               7%
-...            ...               ...
 ```
+
+*(Illustrative; probabilities are renormalized over these four candidates.)*
 
 > **🔍** Softmax works by exponentiating every logit (so all values become positive, and larger logits become disproportionately larger) and then dividing each one by the sum of all the exponentiated values. In three lines of Python:
 
@@ -349,9 +350,9 @@ The honest answer is: because that's *literally how it's being produced*. The mo
 
 We now have a probability distribution over every possible next token — but the model still has to actually *pick one*. This decision-making step is called **decoding**, and there's more than one strategy for it.
 
-**Greedy decoding** is the simplest possible approach: always pick the single highest-probability token, every single time, no exceptions. Using our earlier example, greedy decoding would always choose "sleeping" (42%) over every other option, because it's ranked first. This produces very consistent, repeatable output — but it can also feel flat, repetitive, or overly predictable across longer passages, since the model never takes even a slightly less obvious path.
+**Greedy decoding** is the simplest possible approach: always pick the single highest-probability token, every single time, no exceptions. Using our earlier example, greedy decoding would always choose "sleeping" (51%) over every other option, because it's ranked first. This produces very consistent, repeatable output — but it can also feel flat, repetitive, or overly predictable across longer passages, since the model never takes even a slightly less obvious path.
 
-**Sampling**, on the other hand, treats those probabilities as genuine odds rather than a strict ranking. Instead of always taking the top choice, the model essentially rolls a weighted die: "sleeping" gets picked about 42% of the time, "hungry" about 21% of the time, "cute" about 14% of the time, and so on. Most of the time, this still lands on a very sensible word — but occasionally it introduces variety, which is part of why asking the same question twice can produce two differently worded (but both perfectly reasonable) answers.
+**Sampling**, on the other hand, treats those probabilities as genuine odds rather than a strict ranking. Instead of always taking the top choice, the model essentially rolls a weighted die: "sleeping" gets picked about 51% of the time, "hungry" about 25% of the time, "cute" about 17% of the time, and so on. Most of the time, this still lands on a very sensible word — but occasionally it introduces variety, which is part of why asking the same question twice can produce two differently worded (but both perfectly reasonable) answers.
 
 Neither approach is objectively "better" — they're suited to different needs. Tasks like code generation or factual lookups often lean toward more deterministic decoding, while creative writing tends to benefit from a bit of sampling-driven variety.
 
