@@ -16,8 +16,8 @@ Numbered, testable, 3–7 items. "The system shall ..."
 
 ## 4. Non-functional requirements
 
-| Attribute Target How measured  |   |   |
-| ------------------------------ | - | - |
+| Attribute | Target | How measured |
+|---|---|---|
 | Latency (p95)                  |   |   |
 | Availability                   |   |   |
 | Throughput                     |   |   |
@@ -35,8 +35,8 @@ What this project deliberately does not do.
 
 ## 7. Failure modes
 
-| What can fail Expected behaviour  |
-| --------------------------------- |
+| What can fail | Expected behaviour |
+|---|---|
 
 ## 8. Security and tenancy
 

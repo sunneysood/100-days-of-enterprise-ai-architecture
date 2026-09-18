@@ -131,8 +131,8 @@ The purpose of this phase is to finalize the repository structure, learning sequ
 
 These threads run through the day blocks above. They do not add days; they set a minimum bar every project must meet.
 
-| Thread Introduced Applied in Minimum evidence per project  |                            |                                                    |                                                                                   |
-| ---------------------------------------------------------- | -------------------------- | -------------------------------------------------- | --------------------------------------------------------------------------------- |
+| Thread | Introduced | Applied in | Minimum evidence per project |
+|---|---|---|---|
 | API design & contracts                                     | Days 011–035 (P1)          | Every project                                      | OpenAPI contract, versioning note, completed `api-design/api-design-checklist.md` |
 | Containers & CI/CD                                         | Days 011–035 (P1 skeleton) | Every project                                      | Dockerfile and a CI run that executes the tests                                   |
 | Security & threat modeling                                 | Days 011–035               | Every project; deepened in Days 073–080            | One threat-model entry and one authorization test                                 |
@@ -144,8 +144,8 @@ These threads run through the day blocks above. They do not add days; they set a
 
 ## Project-to-Day Mapping
 
-| Project Built during Notes       |                                               |                                                                                                                                     |
-| -------------------------------- | --------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| Project | Built during | Notes |
+|---|---|---|
 | P1 Production API Foundation     | Days 011–045                                  | Grows block by block: Docker/CI first, PostgreSQL in Days 036–045                                                                   |
 | P2 Enterprise Knowledge System   | Days 046–055                                  |                                                                                                                                     |
 | P3 Intake-to-Resolution Workflow | Days 056–065                                  | Its workflow core is reused by P6                                                                                                   |
