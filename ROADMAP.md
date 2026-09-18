@@ -135,7 +135,7 @@ Resources are categorized as:
 - **Reference** — consulted when a specific gap appears
 - **Optional** — useful but not required
 
-A new resource is not added unless it fills a clearly identified capability gap.
+A new course or certification is not added unless it fills a clearly identified capability gap.
 
 ---
 

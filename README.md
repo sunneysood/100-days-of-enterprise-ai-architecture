@@ -1,4 +1,4 @@
-# 100 Days of Enterprise AI Architecture
+# Enterprise AI Platform Build
 
 > A hands-on journey from system design to production-grade Enterprise AI architecture.
 
@@ -46,6 +46,8 @@ infrastructure/            (planned) Docker, Kubernetes, Terraform, Azure
 ```
 
 ## The 100-Day Structure
+
+A 'day' is one working session (about 2-3 hours), roughly 3-4 per week, over about 6-8 months.
 
 | Days | Focus |
 |---|---|
@@ -100,7 +102,7 @@ The flagship is the **proof of integration** of building and demonstrating every
 
 ## Current Status
 
-## Phase 0 — Planning
+### Phase 0 — Planning
 
 **Start date:** TBD
 
