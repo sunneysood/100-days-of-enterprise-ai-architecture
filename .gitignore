@@ -36,3 +36,12 @@ crash.log
 # Local data
 data/local/
 logs/
+
+# Large local artifacts
+*.tfvars
+*.gguf
+*.safetensors
+.ipynb_checkpoints/
+.mypy_cache/
+.ruff_cache/
+node_modules/

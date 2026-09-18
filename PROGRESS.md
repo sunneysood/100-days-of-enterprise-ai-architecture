@@ -1,27 +1,18 @@
 # Progress
 
-## Status
+## Phase 0 — Planning
 
-Phase 0 — OutLine Preparation
+**Start date:** TBD
 
-**Exam target:** 26 October 2026
+The purpose of this phase is to finalize the repository structure, learning sequence, and technical scope before Day 1.
 
 ## 100-Day Tracker
 
 | Day | Focus | Status | Evidence |
 |---|---|---|---|
-| 001 | | ⬜ | |
-| 002 | | ⬜ | |
-| 003 | | ⬜ | |
-| 004 | | ⬜ | |
-| 005 | | ⬜ | |
-| 006 | | ⬜ | |
-| 007 | | ⬜ | |
-| 008 | | ⬜ | |
-| 009 | | ⬜ | |
-| 010 | | ⬜ | |
-| 011–020 | Distributed systems | ⬜ | |
-| 021–035 | Distributed systems | ⬜ | |
+| 001–010 | Architecture foundations & system design | ⬜ | |
+| 011–035 | Distributed systems | ⬜ | |
+
 | 036–045 | Data & messaging | ⬜ | |
 | 046–055 | Enterprise RAG | ⬜ | |
 | 056–065 | Agents | ⬜ | |

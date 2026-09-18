@@ -1,16 +1,14 @@
 # Roadmap
 
-## Phase 0 
+## Phase 0 — Planning
 
-**Before 26 October 2026**
+**Start date:** TBD
 
-No structured AI-architecture study track.
-
-The purpose of this phase is to protect focus on roadmap preparation.
+The purpose of this phase is to finalize the repository structure, learning sequence, and technical scope before Day 1.
 
 ---
 
-## 100-Day Engineering Apprenticeship
+## 100-Day Engineering Roadmap
 
 ### Days 001–010 — Architecture Foundations
 
@@ -137,7 +135,7 @@ Resources are categorized as:
 - **Reference** — consulted when a specific gap appears
 - **Optional** — useful but not required
 
-A new course or certification is not added unless it fills a clearly identified capability gap.
+A new resource is not added unless it fills a clearly identified capability gap.
 
 ---
 

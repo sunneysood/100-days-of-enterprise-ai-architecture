@@ -144,14 +144,14 @@ for i in range(40):                     # do 40 rounds of merging
 I actually ran this. Here's what came out the other end — the final subword pieces for a few words in our corpus:
 
 ```plaintext
-scientist       -> ['scientist']                    (appeared 2x)
-unbelievably    -> ['unbelievably']                  (appeared 3x)
-science         -> ['science']                       (appeared 3x)
-robot           -> ['ro', 'b', 'o', 't']              (appeared 2x)
-bicycle         -> ['b', 'i', 'c', 'y', 'c', 'l', 'e']  (appeared 1x)
+scientist       -> ['scientist</w>']                    (appeared 2x)
+unbelievably    -> ['unbelievably</w>']                  (appeared 3x)
+science         -> ['science</w>']                       (appeared 3x)
+robot           -> ['ro', 'b', 'o', 't</w>']              (appeared 2x)
+bicycle         -> ['b', 'i', 'c', 'y', 'c', 'l', 'e</w>']  (appeared 1x)
 ```
 
-Look at that! `unbelievably` and `science` showed up 3 times in our tiny training text, so after just 40 merge rounds, they'd *already* collapsed into single, whole tokens. But `bicycle` showed up only **once**, so it never got the chance to merge — it's stuck as individual letters.
+Look at that! `unbelievably` and `science` showed up 3 times in our tiny training text, so after just 40 merge rounds, they'd *already* collapsed into single, whole tokens. But `bicycle` showed up only **once**, so it never got the chance to merge — it's stuck as individual letters. The important caveat is that this tiny corpus is extremely small, so the tokenizer **overfits the examples in the training text**. A real tokenizer learns its vocabulary from a vastly larger and more diverse corpus, so its merges generalize much better.
 
 **This is exactly why tokens have different lengths.** It's not random or based on how "complex" a word looks to a human — it's based purely on **how often chunks of text appeared together during training**. Real tokenizers (like the ones in GPT-4 or Claude) are trained on hundreds of billions of words, so common English words and even common phrases across many languages get their own single token, while rare words, typos, made-up words, or other languages get chopped into smaller pieces.
 
@@ -270,9 +270,9 @@ Let's return to our star sentence and summarize what a real, production-grade to
 
 *   **Common whole words** stay as single tokens: `the`, `was`, `her`, `into`, `before` — these show up constantly in English, so they earned their own dedicated token long ago.
     
-*   **The contraction** `couldn't` typically splits into two tokens: something like `could` + `n't` — because `n't` shows up after tons of different verbs (`don't`, `won't`, `shouldn't`), so it's efficient to keep as its own reusable piece.
+*   **The contraction** `couldn't` typically splits into two tokens: `couldn` + `'t` in GPT-2-style byte-level BPE and in cl100k-style pre-tokenization. The apostrophe-plus-`t` ending is kept as a reusable piece, while `couldn` can remain together as a common character sequence.
     
-*   **The hyphenated word** `self-driving` usually splits at the hyphen: `self` + `-` + `driving` — each piece is common on its own, even if the combined word is rarer.
+*   **The hyphenated word** `self-driving` can keep `-driving` together under cl100k-style pre-tokenization rather than necessarily splitting into `self` + `-` + `driving`. The exact tokenization depends on the tokenizer and vocabulary, so the example should be treated as model-specific rather than a universal rule.
     
 *   **The long word** `unbelievably` often splits into meaningful chunks like `un` + `believ` + `ably`, because those *pieces* (the prefix "un-", the root "believ-", the suffix "-ably") each show up in tons of other words too (`unbelievable`, `believer`, `remarkably`).
     
@@ -322,7 +322,7 @@ Everything in this post is based on real research and real tools. If you want to
 
 **The models that made tokenizers famous**
 
-*   Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, Ł., & Polosukhin, I. (2017). *Attention Is All You Need.* Advances in Neural Information Processing Systems 30. https://arxiv.org/abs/1706.03762 — Introduced the attention mechanism referenced in Section 8.
+*   Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, Ł., & Polosukhin, I. (2017). *Attention Is All You Need.* Advances in Neural Information Processing Systems 30. https://arxiv.org/abs/1706.03762 — Introduced the Transformer architecture built around self-attention, including the scaled dot-product attention mechanism used in the model.
     
 *   Devlin, J., Chang, M.-W., Lee, K., & Toutanova, K. (2019). *BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding.* Proceedings of NAACL-HLT 2019. https://arxiv.org/abs/1810.04805 — A major model built on WordPiece tokenization.
     
@@ -336,4 +336,4 @@ Everything in this post is based on real research and real tools. If you want to
 *   OpenAI Tokenizer (interactive web tool). https://platform.openai.com/tokenizer — Paste in any sentence and watch it get tokenized live, with each token highlighted in a different color.
     
 
-**A note on the code in this post:** the mini-BPE trainer in Sections 4 and 7 is an original, simplified implementation written for this post, based on the algorithm described in Gage (1994) and Sennrich et al. (2016) — it's not copied from any library, and its output was generated by actually running it.
+**A note on the code in this post:** the mini-BPE trainer in Section 4 is an original, simplified implementation written for this post, based on the algorithm described in Gage (1994) and Sennrich et al. (2016) — it's not copied from any library, and its output was generated by actually running it.
