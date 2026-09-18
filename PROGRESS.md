@@ -10,18 +10,9 @@ Phase 0 — OutLine Preparation
 
 | Day | Focus | Status | Evidence |
 |---|---|---|---|
-| 001 | | ⬜ | |
-| 002 | | ⬜ | |
-| 003 | | ⬜ | |
-| 004 | | ⬜ | |
-| 005 | | ⬜ | |
-| 006 | | ⬜ | |
-| 007 | | ⬜ | |
-| 008 | | ⬜ | |
-| 009 | | ⬜ | |
-| 010 | | ⬜ | |
-| 011–020 | Distributed systems | ⬜ | |
-| 021–035 | Distributed systems | ⬜ | |
+| 001–010 | Architecture foundations & system design | ⬜ | |
+| 011–035 | Distributed systems | ⬜ | |
+
 | 036–045 | Data & messaging | ⬜ | |
 | 046–055 | Enterprise RAG | ⬜ | |
 | 056–065 | Agents | ⬜ | |

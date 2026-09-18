@@ -2,13 +2,13 @@
 
 > A hands-on journey from system design to production-grade Enterprise AI architecture.
 
-This repository is an engineering apprenticeship.
+This repository is a learning roadmap.
 
 The objective is to develop the ability to **understand, design, build, break, measure, secure, and explain** production AI systems.
 
 ## North Star
 
-By the end of the journey, developer should demonstrate a coherent capability stack:
+By the end of the journey, the developer should demonstrate a coherent capability stack:
 
 **System Design → Distributed Systems → API Design → Data → AI Systems → RAG → Agents → Evaluation → LLM Infrastructure → Cloud/DevOps → Security/Governance → Enterprise Architecture**
 
@@ -32,17 +32,17 @@ The repository values:
 
 ```
 architecture/              Architecture artifacts and decisions
-system-design/             Distributed systems and real-world system studies
+system-design/             (planned) Distributed systems and real-world system studies
 api-design/                Production API architecture
-data/                      Data engineering and governance
-ai/                        LLMs, RAG, agents, evaluation, inference
-distributed-systems-lab/   Hands-on distributed systems implementation
+data/                      (planned) Data engineering and governance
+ai/                        (planned) LLMs, RAG, agents, evaluation, inference
+distributed-systems-lab/   (planned) Hands-on distributed systems implementation
 projects/                  Progressive capability slices
-experiments/               Focused technical experiments
+experiments/               (planned) Focused technical experiments
 days/                      Day-by-day engineering journal
 docs/                      Durable technical notes
-infrastructure/            Docker, Kubernetes, Terraform, Azure
-.github/                   CI, security and evaluation automation
+infrastructure/            (planned) Docker, Kubernetes, Terraform, Azure
+.github/                   (planned) CI, security and evaluation automation
 ```
 
 ## The 100-Day Structure

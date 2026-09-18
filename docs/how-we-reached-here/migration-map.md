@@ -6,7 +6,7 @@ Reviewed the current Hashnode publication set and mapped the articles against th
 
 ## Migrated now
 
-The first two articles have been copied from user-provided Markdown exports into the repository:
+The three articles have been copied from user-provided Markdown exports into the repository:
 
 1. **From If-Then Rules to ChatGPT: How AI Really Learned to "Think"**
    - Area: AI history / conceptual foundations
@@ -20,11 +20,8 @@ The first two articles have been copied from user-provided Markdown exports into
    - Area: tokenization / NLP foundations / BPE implementation
    - Destination: `docs/how-we-reached-here/ai-foundations/tokens-and-tokenizers.md`
 
-These two establish the technical foundation for the later architecture journey.
+These articles establish the technical foundation for the later architecture journey.
 
-## Migrated now
-
-The third AI foundation article has now been copied from the user-provided Markdown export and normalized for GitHub rendering. Hashnode-hosted images have been converted to standard Markdown image syntax.
 
 ## Move to GitHub — high relevance
 
