@@ -131,7 +131,7 @@ Picture a simplified, three-dimensional slice of that map:
 
 ![](https://cdn.hashnode.com/uploads/covers/653aa283805ce8301a2a5d7d/43642a8c-4588-45ae-8d2f-ebaab84bdf53.png)
 
-"Cat" and "dog" land close together because they show up in similar kinds of sentences — both get walked, fed, and petted. "tired" lands somewhere completely different, closer to "sat," because exercise related words tend to appear in exercise related contexts. Nobody manually programmed these rules; the model discovered them purely by noticing statistical patterns across enormous amounts of text.
+"Cat" and "dog" land close together because they show up in similar kinds of sentences — both get walked, fed, and petted. "tired" and "sat" may appear near each other in a particular simplified visualization because they can occur in similar sentence contexts. The exact geometry is learned from the training data; nobody manually programmed these relationships or a literal "exercise-related" category.
 
 This is why embeddings are so useful beyond just LLMs — they power search engines, recommendation systems, and "find similar items" features, all by measuring distance between points on this meaning-map.
 
@@ -303,10 +303,10 @@ For our sentence, imagine the model is about to predict the word after *"The cat
 
 ```text
 Word          Logit        Softmax Probability
-sleeping       4.8               42%
-hungry         3.9               21%
-cute           3.2               14%
-outside        2.1                6%
+sleeping       4.8               51%
+hungry         4.1               25%
+cute           3.7               17%
+outside        2.85               7%
 ...            ...               ...
 ```
 
@@ -327,7 +327,7 @@ Once we have this clean probability distribution, the model is finally ready to 
 
 ## 14. Autoregressive Generation: Writing One Word at a Time
 
-Here's where the whole system reveals its simplest, and arguably strangest, secret: the model doesn't write your entire answer at once. It writes **one token at a time**, and after producing each one, it feeds *its own output* back in as new input before predicting the next token. This looping pattern is called **autoregressive generation** — "auto" because it's using its own prior output, "regressive" because it's stepping backward over that growing sequence each time.
+Here's where the whole system reveals its simplest, and arguably strangest, secret: the model doesn't write your entire answer at once. It writes **one token at a time**, and after producing each one, it feeds *its own output* back in as new input before predicting the next token. This looping pattern is called **autoregressive generation** — "auto" because the model uses its own prior outputs, and "regressive" because the term comes from regression-style modeling of a series using its own earlier values.
 
 Let's trace it through our example, starting from just "The cat":
 
@@ -415,7 +415,7 @@ And now, the next time someone says *"the AI generated an answer,"* you have the
 
 **Tokenization**
 
-4. Sennrich, R., Haddow, A., & Birch, A. (2016). *Neural Machine Translation of Rare Words with Subword Units* (the original Byte-Pair Encoding paper). [arxiv.org/abs/1508.07909](https://arxiv.org/abs/1508.07909)
+4. Sennrich, R., Haddow, B., & Birch, A. (2016). *Neural Machine Translation of Rare Words with Subword Units* (the original Byte-Pair Encoding paper). [arxiv.org/abs/1508.07909](https://arxiv.org/abs/1508.07909)
 5. Kudo, T., & Richardson, J. (2018). *SentencePiece: A Simple and Language Independent Subword Tokenizer and Detokenizer for Neural Text Processing*. [arxiv.org/abs/1808.06226](https://arxiv.org/abs/1808.06226)
 
 **Positional encoding**
