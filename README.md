@@ -100,9 +100,11 @@ The flagship is the **proof of integration** of building and demonstrating every
 
 ## Current Status
 
-**Phase 0 — Roadmap preparation**
+## Phase 0 — Planning
 
-The engineering journey begins after the RoadMap Finalisation milestone. The repository will have the structure prepared beforehand and updated during the implementation ; the 100-day execution starts once the outline is finalised.
+**Start date:** TBD
+
+The purpose of this phase is to finalize the repository structure, learning sequence, and technical scope before Day 1.
 
 ## Guiding Principle
 **“What architectural problem can I solve now that I could not solve before?”**

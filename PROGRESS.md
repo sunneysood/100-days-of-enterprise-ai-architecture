@@ -1,10 +1,10 @@
 # Progress
 
-## Status
+## Phase 0 — Planning
 
-Phase 0 — OutLine Preparation
+**Start date:** TBD
 
-**Exam target:** 26 October 2026
+The purpose of this phase is to finalize the repository structure, learning sequence, and technical scope before Day 1.
 
 ## 100-Day Tracker
 

@@ -20,7 +20,7 @@ Add a resource only when it provides one of:
 
 ## What does not count
 
-Course completion, playlist completion and certificates are not themselves evidence of engineering capability.
+Course and playlist completion are not themselves evidence of engineering capability.
 
 ## Core loop
 
