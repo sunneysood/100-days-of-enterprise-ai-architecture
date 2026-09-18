@@ -74,6 +74,8 @@ The purpose of this phase is to finalize the repository structure, learning sequ
 - durable execution
 - tool authorization
 - agent evaluation
+- event-triggered workflows (Kafka)
+- approval and remediation loop
 
 ### Days 066–072 — Document Intelligence & Data Onboarding
 
@@ -124,6 +126,40 @@ The purpose of this phase is to finalize the repository structure, learning sequ
 - deployment architecture
 - production readiness
 - final architecture review
+
+## Cross-Cutting Tracks
+
+These threads run through the day blocks above. They do not add days; they set a minimum bar every project must meet.
+
+| Thread Introduced Applied in Minimum evidence per project  |                            |                                                    |                                                                                   |
+| ---------------------------------------------------------- | -------------------------- | -------------------------------------------------- | --------------------------------------------------------------------------------- |
+| API design & contracts                                     | Days 011–035 (P1)          | Every project                                      | OpenAPI contract, versioning note, completed `api-design/api-design-checklist.md` |
+| Containers & CI/CD                                         | Days 011–035 (P1 skeleton) | Every project                                      | Dockerfile and a CI run that executes the tests                                   |
+| Security & threat modeling                                 | Days 011–035               | Every project; deepened in Days 073–080            | One threat-model entry and one authorization test                                 |
+| Observability                                              | Days 011–035 (P1)          | Every project; distributed tracing in Days 081–090 | Structured logs, metrics, and a request-ID or trace path                          |
+| Evaluation                                                 | Days 046–055 (P2)          | Every AI project; formalized in Days 073–080       | A small labelled evaluation set that reruns on every change                       |
+| Cost / FinOps                                              | Days 046–055               | Every AI project; consolidated in Days 091–100     | A cost-per-request estimate                                                       |
+| ADRs                                                       | Days 001–010               | Every project                                      | At least one ADR per project                                                      |
+| Infrastructure as code (Terraform, Azure)                  | Days 081–090 (P7)          | P7, P8                                             | Reproducible deploy from code. Docker Compose is enough before P7                 |
+
+## Project-to-Day Mapping
+
+| Project Built during Notes       |                                               |                                                                                                                                     |
+| -------------------------------- | --------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| P1 Production API Foundation     | Days 011–045                                  | Grows block by block: Docker/CI first, PostgreSQL in Days 036–045                                                                   |
+| P2 Enterprise Knowledge System   | Days 046–055                                  |                                                                                                                                     |
+| P3 Intake-to-Resolution Workflow | Days 056–065                                  | Its workflow core is reused by P6                                                                                                   |
+| P4 Document Intelligence         | Days 066–072                                  |                                                                                                                                     |
+| P5 Customer Data Onboarding      | Starts Days 036–045, finishes Days 066–072    | Ingestion, validation and reconciliation overlap the Data & Messaging block                                                         |
+| P6 Operations AI                 | Days 056–065                                  | Event-triggered extension of P3. Reuses Kafka from Days 011–035. Adds an approval and remediation loop rather than a separate build |
+| P7 Production LLM Serving        | Days 081–090                                  |                                                                                                                                     |
+| P8 Flagship Platform             | Starts Days 046–055, hardened in Days 091–100 | Merge each project into the platform as it finishes, so Days 091–100 are hardening, not first integration                           |
+
+## Compute and Budget
+
+GPU spending cap: **USD 50 maximum in total** for the whole journey. P7 (Days 081–090) is the main consumer.
+The detailed plan (provider, instance type, hours) is a future task, to be done before Day 081.
+Fallbacks if the cap is tight: run a small model on CPU, rent a GPU only for benchmark sessions, and stop instances after every session.
 
 ---
 
