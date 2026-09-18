@@ -4,7 +4,21 @@
 
 Reviewed the current Hashnode publication set and mapped the articles against the Enterprise AI Architecture journey.
 
-### Move to GitHub — high relevance
+## Migrated now
+
+The first two articles have been copied from user-provided Markdown exports into the repository:
+
+1. **From If-Then Rules to ChatGPT: How AI Really Learned to "Think"**
+   - Area: AI history / conceptual foundations
+   - Destination: `docs/how-we-reached-here/ai-foundations/from-if-then-rules-to-chatgpt.md`
+
+2. **How Large Language Models Actually Work: From Your Prompt to Every Word They Write**
+   - Area: LLM fundamentals / Transformer mechanics
+   - Destination: `docs/how-we-reached-here/ai-foundations/how-large-language-models-actually-work.md`
+
+These two establish the technical foundation for the later architecture journey.
+
+## Move to GitHub — high relevance
 
 1. **Why Digital Transformation Programs Fail Long Before Technology Becomes the Problem**
    - Area: business architecture / program leadership
@@ -38,7 +52,7 @@ Reviewed the current Hashnode publication set and mapped the articles against th
    - Area: convergence of program leadership + AI governance + engineering
    - Destination: `docs/how-we-reached-here/`
 
-### Keep on Hashnode for now
+## Keep on Hashnode for now
 
 These are useful learning notes but do not strengthen the central Enterprise AI Architect narrative enough to justify moving them into the module:
 
@@ -54,6 +68,7 @@ They can be referenced from project-specific documentation if their ideas become
 
 ## Important
 
-Hashnode provides an official GitHub integration that can back up articles to GitHub in Markdown. Once the blog backup is connected to this repository, the original Markdown can be reorganized into the curated structure without manually recreating each article.
+Hashnode's GitHub backup is a Pro feature on the current account, so we are **not relying on that feature** for this migration.
 
-Until that backup is connected, this map is the source-of-truth for what should migrate.
+For the curated migration, Markdown exports can be supplied directly and committed into the repository. The original Hashnode publications remain the canonical published versions.
+
