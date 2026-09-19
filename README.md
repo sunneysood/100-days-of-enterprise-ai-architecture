@@ -8,7 +8,7 @@ The objective is to develop the ability to **understand, design, build, break, m
 
 ## North Star
 
-By the end of the journey, the developer should demonstrate a coherent capability stack:
+By the end of the journey, I should be able to demonstrate a coherent capability stack:
 
 **System Design → Distributed Systems → API Design → Data → AI Systems → RAG → Agents → Evaluation → LLM Infrastructure → Cloud/DevOps → Security/Governance → Enterprise Architecture**
 
@@ -42,7 +42,7 @@ experiments/               (planned) Focused technical experiments
 days/                      Day-by-day engineering journal
 docs/                      Durable technical notes
 infrastructure/            (planned) Docker, Kubernetes, Terraform, Azure
-.github/                   (planned) CI, security and evaluation automation
+.github/                   PR template (CI, security and evaluation automation planned)
 ```
 
 ## The 100-Day Structure
@@ -65,17 +65,17 @@ The sequence is intentionally progressive. Earlier capabilities become building 
 
 ## Core Engineering Questions
 
-For every system, we ask:
+For every system, ask:
 
-1. What problem are we solving?
+1. What problem is being solved?
 2. What are the functional requirements?
 3. What are the quality attributes and NFRs?
 4. What are the expected load and growth assumptions?
 5. What can fail?
 6. What should be synchronous vs asynchronous?
 7. Where does state live?
-8. How do we secure identities, data, tools and tenants?
-9. How do we observe and evaluate the system?
+8. How are identities, data, tools and tenants secured?
+9. How is the system observed and evaluated?
 10. What does it cost?
 11. How does it recover?
 12. Why is this architecture preferable to the alternatives?
@@ -98,15 +98,13 @@ The journey ultimately converges into a production-oriented Enterprise AI platfo
 - FinOps and cost controls
 - resilience, scaling and disaster recovery
 
-The flagship is the **proof of integration** of building and demonstrating everything we have learnt along the journey.
+The flagship is the **proof of integration** of building and demonstrating everything I have learnt along the journey.
 
 ## Current Status
 
 ### Phase 0 — Planning
 
-**Start date:** TBD
-
-The purpose of this phase is to finalize the repository structure, learning sequence, and technical scope before Day 1.
+Start date and day-by-day status are tracked in [PROGRESS.md](./PROGRESS.md).
 
 ## Guiding Principle
 **“What architectural problem can I solve now that I could not solve before?”**
