@@ -35,7 +35,7 @@ A **token** is just a chunk of text that an AI model treats as one unit. It coul
 
 *   A whole word (`science`)
     
-*   Part of a word (`un` + `believably`)
+*   Part of a word (`token` + `ization`)
     
 *   A single character (`x`)
     
@@ -66,7 +66,7 @@ Why does sequence *length* matter so much? Because of how transformer models (th
 
 And splitting by *whole words* has the opposite problem: English alone has hundreds of thousands of words, plus names, typos, slang, and words in other languages. A model would need a gigantic dictionary, and it would still panic every time it saw a word it had never seen before (like `rizzlorious` or a name like `Xiomara`).
 
-**Subword tokens are the compromise**: common words stay whole (`the`, `science`), while rare or complex words get split into meaningful chunks (`unbelievably` → `un` + `believ` + `ably`).
+**Subword tokens are the compromise**: common words stay whole (`the`, `science`), while rare or complex words get split into meaningful chunks (`tokenization` → `token` + `ization`).
 
 **🤔 Think about it:** Why do you think a made-up word like `"blorptastic"` would still be understandable to a tokenizer, even though it's never seen that exact word before?
 
@@ -76,7 +76,7 @@ And splitting by *whole words* has the opposite problem: English alone has hundr
 
 ## 4\. Why Aren't Tokens a Fixed Length?
 
-This trips a lot of people up. If tokens are "medium-sized chunks," why is `the` one token, but `unbelievably` sometimes gets split into 2-3 tokens?
+This trips a lot of people up. If tokens are "medium-sized chunks," why is `the` one token, but a longer word like `tokenization` gets split into two?
 
 The answer: **tokenizers are trained on huge amounts of real text, and they learn to keep whatever chunks show up together *most often* as single tokens.**
 
@@ -270,14 +270,14 @@ Let's return to our star sentence and summarize what a real, production-grade to
 
 *   **Common whole words** stay as single tokens: `the`, `was`, `her`, `into`, `before` — these show up constantly in English, so they earned their own dedicated token long ago.
     
-*   **The contraction** `couldn't` typically splits into two tokens: `couldn` + `'t` in GPT-2-style byte-level BPE and in cl100k-style pre-tokenization. The apostrophe-plus-`t` ending is kept as a reusable piece, while `couldn` can remain together as a common character sequence.
+*   **The contraction** `couldn't` depends on the tokenizer. The GPT-2/3 and GPT-3.5/4 tokenizers split it into `couldn` + `'t`, keeping the apostrophe ending as a reusable piece. GPT-4o's tokenizer keeps `couldn't` as a single token.
     
-*   **The hyphenated word** `self-driving` can keep `-driving` together under cl100k-style pre-tokenization rather than necessarily splitting into `self` + `-` + `driving`. The exact tokenization depends on the tokenizer and vocabulary, so the example should be treated as model-specific rather than a universal rule.
+*   **The hyphenated word** `self-driving` also varies. GPT-2/3 splits it into `self` + `-` + `driving`; GPT-3.5/4 and GPT-4o keep `-driving` together as `self` + `-driving`.
     
-*   **The long word** `unbelievably` often splits into meaningful chunks like `un` + `believ` + `ably`, because those *pieces* (the prefix "un-", the root "believ-", the suffix "-ably") each show up in tons of other words too (`unbelievable`, `believer`, `remarkably`).
+*   **The long word** `unbelievably` is a good reminder that tokenizers follow frequency, not grammar. GPT-3.5/4 splits it into `unbelie` + `vably` — not the prefix, root and suffix a linguist would pick — while GPT-2/3 and GPT-4o each hold it as a single token. The pieces are whatever was common in that tokenizer's training text.
     
 
-Roughly speaking, a well-trained modern tokenizer usually produces **somewhere around 30–40 tokens** for a sentence like this — noticeably more than the 25 whitespace-separated words, but nowhere close to the 167 individual characters. That "medium zone" is exactly the sweet spot we talked about back in Section 3.
+Counting with OpenAI's public tokenizers, the sentence comes out at **30 tokens** with GPT-2/3 and GPT-3.5/4, and **28** with GPT-4o. That is a little more than the 25 whitespace-separated words, but nowhere close to the 167 individual characters. That "medium zone" is exactly the sweet spot we talked about back in Section 3.
 
 **Remember your guess from the very beginning?** How close were you?
 
