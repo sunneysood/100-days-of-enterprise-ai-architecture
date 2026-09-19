@@ -2,52 +2,17 @@
 
 Each day should capture an engineering artifact, not a consumption log.
 
-Use this template:
+A day is one working session (about 2–3 hours). Create one file per day, named `day-001.md`, `day-002.md`, and so on.
 
-## Problem
+## Two templates
 
-What problem are we solving?
+| Template | Use it for | Length |
+|---|---|---|
+| [_TEMPLATE-light.md](./_TEMPLATE-light.md) | Routine days: practice, reading turned into a small experiment, incremental progress | 5 short sections |
+| [_TEMPLATE-full.md](./_TEMPLATE-full.md) | Days that produce a design or a decision, project milestones, and at least one day per roadmap block | 12 sections |
 
-## Why It Matters
+If a day produces a real decision, use the full template and write an [ADR](../architecture/adr/README.md).
 
-What production or business consequence does it address?
+## Completion rule
 
-## What I Learned
-
-Only the minimum theory needed to understand the problem.
-
-## Architecture
-
-Describe or diagram the solution.
-
-## Decision
-
-What did we choose?
-
-## Alternatives
-
-What else could we have done?
-
-## Trade-offs
-
-What did we gain and what did we give up?
-
-## Implementation
-
-Link to the code or experiment.
-
-## Failure
-
-What broke or behaved unexpectedly?
-
-## Evidence
-
-Metrics, tests, screenshots, traces, benchmarks or logs.
-
-## Architect's Takeaway
-
-What principle can be reused elsewhere?
-
-## Next Step
-
-What should be investigated next?
+A day is complete when its entry links at least one tangible artifact and includes evidence. The accepted artifacts are listed under Evidence Rules in [PROGRESS.md](../PROGRESS.md). A day entry is the day-level record; PROGRESS.md tracks status by block.

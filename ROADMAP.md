@@ -2,9 +2,7 @@
 
 ## Phase 0 — Planning
 
-**Start date:** TBD
-
-The purpose of this phase is to finalize the repository structure, learning sequence, and technical scope before Day 1.
+Start date and status: see [PROGRESS.md](./PROGRESS.md).
 
 ---
 
