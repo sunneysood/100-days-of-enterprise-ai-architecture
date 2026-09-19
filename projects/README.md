@@ -2,9 +2,13 @@
 
 These are progressive capability slices that eventually feed the flagship platform.
 
+Each project has a requirements file named `pN-requirements.md`, created from [_TEMPLATE.md](./_TEMPLATE.md).
+
 ## P1 — Production API Foundation
 
 FastAPI • PostgreSQL • auth • testing • Docker • CI/CD • observability
+
+Requirements: [p1-requirements.md](./p1-requirements.md)
 
 ## P2 — Enterprise Knowledge System
 
